@@ -14,6 +14,8 @@
 - [Future Enhancements](#-future-enhancements)
 - [Evaluation Criteria](#-evaluation-criteria)
 - [Contributor](#-contributors)
+- [Login Credentials](#-login-credentials)
+- [User Registration](#-user-registration)
 
 ## ✨ Key Features
 
@@ -58,8 +60,8 @@
 
 ### Setup Instructions
 ```bash
-# Clone repository (if applicable)
-git clone [repository-url]
+# Clone repository 
+git clone [https://github.com/Ailya-Shah/OOP-RHMS]
 cd RHMS
 
 # Compile all source files
@@ -83,9 +85,7 @@ java RHMS
 
 ### Video Consultation Flow
 1. Doctors schedules a meeting and provides zoom or a google meet link for it and it is stored.
-
 2. Patient can check his logs from patient menu to see the scheduled meetings with doctors.
-
 3. System tracks consultation status.
 
 ## 📐 Class Structure
@@ -125,14 +125,111 @@ classDiagram
 
 ## 🔒 Security Considerations
 
-###  Implementation
+### Implementation
 - Basic password authentication
 - In-memory data storage
 - Plaintext credentials
 
 
-## 📜 Evaluation Criteria
+## 🔑 Login Credentials
 
+### Pre-registered Users
+
+#### Administrator
+- **ID:** A001
+- **Email:** admin@example.com
+- **Password:** admin123
+
+#### Doctors
+1. **Dr. Smith (Cardiologist)**
+   - **ID:** D001
+   - **Email:** smith@example.com
+   - **Password:** doc123
+
+2. **Dr. Johnson (Dermatologist)**
+   - **ID:** D002
+   - **Email:** johnson@example.com
+   - **Password:** doc456
+
+3. **Dr. Wajeeh (Neurologist)**
+   - **ID:** D003
+   - **Email:** wajeeh@example.com
+   - **Password:** Wajeeh123
+
+#### Patients
+1. **Ali**
+   - **ID:** P001
+   - **Email:** ali@example.com
+   - **Password:** ali123
+
+2. **Ailya**
+   - **ID:** P002
+   - **Email:** ailya@example.com
+   - **Password:** Ailya1234
+
+## 📝 User Registration
+
+### New User Registration Feature
+
+The system now includes a comprehensive user registration system that allows new users to join the platform as administrators, doctors, or patients.
+
+#### Registration Process:
+1. From the main menu, select "Register New User"
+2. Choose your role (Admin/Doctor/Patient)
+3. Provide required information:
+   - **For All Users:**
+     - Unique ID
+     - Full name
+     - Email address
+     - Password
+   - **Additional for Doctors:**
+     - Specialization
+   - **Additional for Patients:**
+     - Age
+     - Gender
+     - Phone number
+
+#### Key Features:
+- **Role-Based Registration:** Different forms for each user type
+- **Immediate Access:** New users can login immediately after registration
+- **Data Validation:** Basic input validation ensures required fields are completed
+- **Unique IDs:** System doesn't check for duplicate IDs (enhancement opportunity)
+
+#### Technical Implementation:
+- Uses the same constructors as pre-registered users
+- Stores new users in the same in-memory collections
+- Maintains all existing functionality for new users
+- Registration handled through dedicated methods in main class
+
+#### Example Registration Flow:
+```text
+=== Remote Health Management System ===
+
+1. Login
+2. Register New User
+3. Exit
+Choose option: 2
+
+=== Register New User ===
+1. Register as Admin
+2. Register as Doctor
+3. Register as Patient
+4. Back to Main Menu
+Choose role to register: 2
+
+=== Register New Doctor ===
+Enter Doctor ID: D004
+Enter Name: Dr. Brown
+Enter Email: brown@example.com
+Enter Password: doc789
+Enter Specialization: Pediatrician
+
+Doctor registered successfully!
+```
+
+**Note:** The first admin account is pre-created, but the system allows registering new admin accounts which can replace the original admin.
+
+## 📜 Evaluation Criteria
 
 | Category                          | Marks |
 |-----------------------------------|-------|
@@ -141,11 +238,8 @@ classDiagram
 | Main Application Functionality    | 10    |
 | **Total**                         | **50**|
 
-
 ## 👥 Contributors
 
 | Name            | ID     | Contribution Area               |
 |-----------------|--------|---------------------------------|
 | Ailya Zainab    | 523506 | Core System Architecture        |
-
----
